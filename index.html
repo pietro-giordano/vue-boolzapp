@@ -50,11 +50,11 @@
 
                               <main>
                                     <ul>
-                                          <li>
-                                                <img class="circle" src="img/avatar_1.jpg" alt="">
+                                          <li v-for="contact in contacts">
+                                                <img class="circle" :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
       
                                                 <div class="contact">
-                                                      <p>Michele</p>
+                                                      <p> {{contact.name}} </p>
                                                       <p class="tiny-text">Ultimo messaggio inviato</p>
                                                 </div>
       

@@ -66,7 +66,7 @@ input:focus {
 .left-side header,
 .right-side header,
 .right-side footer {
-      height: 10%;
+      height: 8%;
       background-color: #eaeaea;
 }
 
@@ -164,7 +164,7 @@ input:focus {
 
 .left-side main {
       background-color: white;
-      height: 74%;
+      height: 76%;
 }
 
 .left-side main ul {
@@ -173,13 +173,16 @@ input:focus {
 }
 
 .left-side main ul li {
-      height: 12%;
+      height: 11%;
       display: flex;
       align-items: center;
       cursor: pointer;
       border-top: 1px solid lightgrey;
-      border-bottom: 1px solid lightgrey;
       padding: 0.4rem;
+}
+
+.left-side main ul li:hover {
+      background-color: #e9ebeb;
 }
 
 .left-side main ul li img {
@@ -198,7 +201,7 @@ input:focus {
 
 .right-side main {
       background-image: url("../img/mine.jpg");
-      height: 80%;
+      height: 84%;
       padding: 5% 10%;
 }
 
