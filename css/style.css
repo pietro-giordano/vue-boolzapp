@@ -207,21 +207,37 @@ input:focus {
 }
 
 .right-side main ul li {
-      max-width: 40%;
+      display: flex;
+}
+
+.right-side main ul .right {
+      justify-content: end;
+}
+
+.right-side main ul li .msg {
+      min-width: 40%;
+      max-width: 90%;
       font-size: 0.8rem;
       padding: 0.7rem;
       margin-bottom: 0.3rem; 
       border-radius: 0.5rem;
+      position: relative;
 }
 
-.right-side main ul .send {
+.right-side main ul li .sent {
       background-color: #d5f9ba;
-      float: right;
 }
 
-.right-side main ul .received {
+.right-side main ul li .received {
       background-color: white;
-      float: left;
+}
+
+.right-side main ul li .msg-time {
+      font-size: 0.5rem;
+      color: #b1b1b1;
+      position: absolute;
+      bottom: 0.3rem;
+      right: 0.3rem;
 }
 
 .right-side footer {
