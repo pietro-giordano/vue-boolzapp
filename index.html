@@ -50,7 +50,7 @@
 
                               <main>
                                     <ul>
-                                          <li v-for="contact in contacts">
+                                          <li v-for="(contact, index) in contacts" @click="clickedContact(index)">
                                                 <img class="circle" :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
       
                                                 <div class="contact">
@@ -71,11 +71,11 @@
 
                               <header>
                                     <div class="user">
-                                          <img class="circle" src="img/avatar_io.jpg" alt="">
+                                          <img class="circle" :src=" 'img/avatar' + contacts[selectedContact].avatar + '.jpg' " alt="">
 
                                           <div class="contact-name">
-                                                <p>Michele</p>
-                                                <p class="tiny-text">Ultimo messaggio inviato</p>
+                                                <p>{{ contacts[selectedContact].name }}</p>
+                                                <p class="tiny-text">Ultimo accesso oggi alle 12:00</p>
                                           </div>
                                     </div>
                                     
@@ -88,28 +88,10 @@
 
                               <main>
                                     <ul>
-                                          <li class="right">
-                                                <div class="msg sent">
-                                                      Hai portato a spasso il cane?
+                                          <li v-for="message in contacts[selectedContact].messages" :class="message.status == 'sent' ? 'right' : '' ">
+                                                <div class="msg" :class="message.status == 'sent' ? 'sent' : 'received' ">
+                                                      {{ message.message }}
 
-                                                      <div class="msg-time">
-                                                            12:00
-                                                      </div>
-                                                </div>
-                                          </li>
-                                          <li class="right">
-                                                <div class="msg sent">
-                                                      Hai portato a spasso il cane?
-                                                
-                                                      <div class="msg-time">
-                                                            12:00
-                                                      </div>
-                                                </div>
-                                          </li>
-                                          <li>
-                                                <div class="msg received">
-                                                      Hai portato a spasso il cane?
-                                                
                                                       <div class="msg-time">
                                                             12:00
                                                       </div>

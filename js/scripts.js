@@ -5,6 +5,7 @@ createApp({
       data() {
 
             return {
+                  selectedContact: 0,
                   contacts: [
                         {
                               name: 'Michele',
@@ -172,7 +173,11 @@ createApp({
 
       methods: {
             
-            
+            clickedContact(index) {
+
+                  this.selectedContact = index;
+
+            }
 
       },
 
