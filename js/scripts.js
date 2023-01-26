@@ -224,6 +224,28 @@ createApp({
                   }, 1000);
 
             },
+            
+            inputNameChar() {
+                  
+                  this.contacts.forEach((contact) => {
+                        
+                        if(!contact.name.toLowerCase().includes(this.inputName.toLowerCase())) {
+                              
+                              contact.visible = false;
+                              
+                        } else if (contact.name.toLowerCase().includes(this.inputName.toLowerCase())) {
+                              
+                              contact.visible = true;
+                              
+                        } else if (this.inputName == '') {
+                              
+                              contact.visible = true;
+                              
+                        }
+                        
+                  });
+           
+            },
 
             messageTime() {
 
@@ -238,29 +260,6 @@ createApp({
 
                         });
                         
-                  });
-
-
-            },
-
-            inputNameChar() {
-
-                  this.contacts.forEach((contact) => {
-
-                        if(!contact.name.toLowerCase().includes(this.inputName.toLowerCase())) {
-
-                              contact.visible = false;
-
-                        } else if (contact.name.toLowerCase().includes(this.inputName.toLowerCase())) {
-
-                              contact.visible = true;
-
-                        } else if (this.inputName == '') {
-
-                              contact.visible = true;
-
-                        }
-
                   });
 
             },

@@ -55,11 +55,11 @@
       
                                                 <div class="contact">
                                                       <p> {{contact.name}} </p>
-                                                      <p class="tiny-text">Ultimo messaggio inviato</p>
+                                                      <p class="tiny-text">{{ contact.messages[contact.messages.length - 1].message }}</p>
                                                 </div>
       
                                                 <div class="last-message tiny-text">
-                                                      12:00
+                                                      {{ contact.messages[contact.messages.length - 1].date }}
                                                 </div>
                                           </li>
                                     </ul>
@@ -75,7 +75,7 @@
 
                                           <div class="contact-name">
                                                 <p>{{ contacts[selectedContact].name }}</p>
-                                                <p class="tiny-text">Ultimo accesso oggi alle 12:00</p>
+                                                <p class="tiny-text">Ultimo accesso oggi alle {{ contacts[selectedContact].messages[contacts[selectedContact].messages.length - 1].date }}</p>
                                           </div>
                                     </div>
                                     
