@@ -6,6 +6,7 @@ createApp({
 
             return {
                   selectedContact: 0,
+                  newMsg: '',
                   contacts: [
                         {
                               name: 'Michele',
@@ -164,9 +165,9 @@ createApp({
                                           message: 'OK!!',
                                           status: 'received'
                                     }
-                              ],
-                        }
-                  ] 
+                              ]
+                        },
+                  ]
             };
 
       },
@@ -176,6 +177,18 @@ createApp({
             clickedContact(index) {
 
                   this.selectedContact = index;
+
+            },
+
+            newMessage() {
+
+                  this.contacts[this.selectedContact].messages.push({
+                        date: '10/01/2020 15:51:00',
+                        message: this.newMsg,
+                        status: 'sent'
+                  });
+
+                  this.newMsg = '';
 
             }
 
