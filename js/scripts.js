@@ -7,6 +7,7 @@ createApp({
             return {
                   selectedContact: 0,
                   newMsg: '',
+                  inputName: '',
                   contacts: [
                         {
                               name: 'Michele',
@@ -222,7 +223,25 @@ createApp({
                         });
                   }, 1000);
 
-            }
+            },
+
+            inputNameChar() {
+
+                  this.contacts.forEach((contact) => {
+
+                        if(!contact.name.includes(this.inputName)) {
+
+                              contact.visible = false;
+
+                        } else if(this.inputName == '') {
+
+                              contact.visible = true;
+
+                        }
+
+                  });
+
+            },
 
       },
 

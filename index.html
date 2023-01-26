@@ -45,12 +45,12 @@
 
                               <div class="search-bar">
                                     <div><i class="fa-solid fa-magnifying-glass"></i></div>
-                                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                                    <input v-model="inputName" @keyup="inputNameChar()" type="text" placeholder="Cerca o inizia una nuova chat">
                               </div>
 
                               <main>
                                     <ul>
-                                          <li v-for="(contact, index) in contacts" @click="clickedContact(index)">
+                                          <li v-for="(contact, index) in contacts" @click="clickedContact(index)" v-show="contact.visible">
                                                 <img class="circle" :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
       
                                                 <div class="contact">
