@@ -88,7 +88,7 @@
 
                               <main>
                                     <ul>
-                                          <li v-for="message in contacts[selectedContact].messages" :class="message.status == 'sent' ? 'right' : '' ">
+                                          <li v-for="(message, index) in contacts[selectedContact].messages" :class="message.status == 'sent' ? 'right' : '' ">
                                                 <div class="msg" :class="message.status == 'sent' ? 'sent' : 'received' ">
                                                       {{ message.message }}
 

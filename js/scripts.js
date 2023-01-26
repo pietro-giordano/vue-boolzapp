@@ -225,6 +225,24 @@ createApp({
 
             },
 
+            messageTime() {
+
+                  this.contacts.forEach((contact) => {
+
+                        contact.messages.forEach((message) => {
+
+                              const splittedDate = message.date.split(' ');
+                              const splittedTime = splittedDate[1].split(':');
+      
+                              message.date = splittedTime[0] + ':' + splittedTime[1];
+
+                        });
+                        
+                  });
+
+
+            },
+
             inputNameChar() {
 
                   this.contacts.forEach((contact) => {
@@ -242,11 +260,17 @@ createApp({
                               contact.visible = true;
 
                         }
-                        
+
                   });
 
             },
 
       },
+
+      mounted() {
+
+            this.messageTime();
+
+      }
 
 }).mount('#app');
