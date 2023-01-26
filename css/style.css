@@ -66,7 +66,7 @@ input:focus {
 .left-side header,
 .right-side header,
 .right-side footer {
-      height: 8%;
+      height: 55px;
       background-color: #eaeaea;
 }
 
@@ -102,15 +102,15 @@ input:focus {
 
 .left-side .alerts {
       background-color: #8edafc;
-      height: 10%;
+      height: 70px;
       display: flex;
       align-items: center;
 }
 
 .left-side .alerts .circle {
       background-color: white;
-      height: 7vh;
-      width: 7vh;
+      height: 50px;
+      width: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -133,7 +133,7 @@ input:focus {
 
 .left-side .search-bar {
       background-color: #eaeaea;
-      height: 6%;
+      height: 40px;
       padding: 0.35rem;
       display: flex;
 }
@@ -164,16 +164,18 @@ input:focus {
 
 .left-side main {
       background-color: white;
-      height: 76%;
+      height: calc(100% - 165px);
+      overflow-y: auto;
 }
 
 .left-side main ul {
       height: 100%;
       list-style: none;
+      overflow-y: auto;
 }
 
 .left-side main ul li {
-      height: 11%;
+      height: 60px;
       display: flex;
       align-items: center;
       cursor: pointer;
@@ -201,7 +203,7 @@ input:focus {
 
 .right-side main {
       background-image: url("../img/mine.jpg");
-      height: 84%;
+      height: calc(100% - 110px);
       padding: 5% 10%;
 }
 
