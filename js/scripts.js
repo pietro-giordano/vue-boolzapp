@@ -233,12 +233,16 @@ createApp({
 
                               contact.visible = false;
 
-                        } else if(this.inputName == '') {
+                        } else if (contact.name.toLowerCase().includes(this.inputName.toLowerCase())) {
+
+                              contact.visible = true;
+
+                        } else if (this.inputName == '') {
 
                               contact.visible = true;
 
                         }
-
+                        
                   });
 
             },
