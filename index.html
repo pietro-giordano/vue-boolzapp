@@ -45,7 +45,7 @@
 
                               <div class="search-bar">
                                     <div><i class="fa-solid fa-magnifying-glass"></i></div>
-                                    <input v-model="inputName" @keyup="inputNameChar()" type="text" placeholder="Cerca o inizia una nuova chat">
+                                    <input v-model="inputName" @keyup="inputNameChar()" @keyup.backspace="inputNameChar()" @keyup.canc="inputNameChar()" type="text" placeholder="Cerca o inizia una nuova chat">
                               </div>
 
                               <main>

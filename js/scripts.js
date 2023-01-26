@@ -229,7 +229,7 @@ createApp({
 
                   this.contacts.forEach((contact) => {
 
-                        if(!contact.name.includes(this.inputName)) {
+                        if(!contact.name.toLowerCase().includes(this.inputName.toLowerCase())) {
 
                               contact.visible = false;
 
