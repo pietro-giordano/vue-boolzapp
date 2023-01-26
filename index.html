@@ -93,7 +93,7 @@
                                                       {{ message.message }}
 
                                                       <div class="msg-time">
-                                                            12:00
+                                                            {{ message.date }}
                                                       </div>
                                                 </div>
                                           </li>
@@ -102,7 +102,7 @@
 
                               <footer>
                                     <button><i class="fa-regular fa-face-smile"></i></button>
-                                    <input v-model="newMsg" @keyup.enter="newMessage" type="text" placeholder="Scrivi un messaggio">
+                                    <input v-model="newMsg" @keyup.enter="newMessage(), replyMessage()" type="text" placeholder="Scrivi un messaggio">
                                     <button><i class="fa-solid fa-microphone"></i></button>
                               </footer>
                               

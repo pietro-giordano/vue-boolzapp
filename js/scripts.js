@@ -182,13 +182,45 @@ createApp({
 
             newMessage() {
 
+                  let hour = new Date().getHours();
+                  if(hour < 10) {
+                        hour = '0' + hour;
+                  }
+
+                  let minutes = new Date().getMinutes();
+                  if (minutes < 10) {
+                        minutes = '0' + minutes;
+                  }
+
                   this.contacts[this.selectedContact].messages.push({
-                        date: '10/01/2020 15:51:00',
+                        date: hour + ':' + minutes,
                         message: this.newMsg,
                         status: 'sent'
                   });
 
                   this.newMsg = '';
+
+            },
+
+            replyMessage() {
+
+                  let hour = new Date().getHours();
+                  if (hour < 10) {
+                        hour = '0' + hour;
+                  }
+
+                  let minutes = new Date().getMinutes();
+                  if (minutes < 10) {
+                        minutes = '0' + minutes;
+                  }
+
+                  setTimeout( () => {
+                        this.contacts[this.selectedContact].messages.push({
+                              date: hour + ':' + minutes,
+                              message: 'ok',
+                              status: 'received'
+                        });
+                  }, 1000);
 
             }
 
