@@ -99,7 +99,7 @@
                                                             {{ message.date.slice(11, 16) }}
                                                       </div>
 
-                                                      <span v-show="dropdownVisibility" class="dropdown">
+                                                      <span v-show="dropdownVisibility" @click="deleteMessage(selectedContact, index)" class="dropdown">
                                                             Cancella messaggio
                                                       </span>
                                                 </div>

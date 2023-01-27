@@ -270,7 +270,13 @@ createApp({
                   this.dropdownVisibility = !this.dropdownVisibility;
                   console.log(this.dropdownVisibility)
 
-            }
+            },
+
+            deleteMessage(selected, index) {
+
+                  this.contacts[selected].messages.splice(index, 1);
+
+            },
 
       //       messageTime() {
 
