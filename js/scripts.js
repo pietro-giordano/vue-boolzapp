@@ -8,6 +8,7 @@ createApp({
                   selectedContact: 0,
                   newMsg: '',
                   inputName: '',
+                  dropdownVisibility: false,
                   contacts: [
                         {
                               name: 'Michele',
@@ -183,18 +184,10 @@ createApp({
 
             newMessage() {
 
-                  let hour = new Date().getHours();
-                  if(hour < 10) {
-                        hour = '0' + hour;
-                  }
-
-                  let minutes = new Date().getMinutes();
-                  if (minutes < 10) {
-                        minutes = '0' + minutes;
-                  }
+                  this.newDate();
 
                   this.contacts[this.selectedContact].messages.push({
-                        date: hour + ':' + minutes,
+                        date: newDate,
                         message: this.newMsg,
                         status: 'sent'
                   });
@@ -204,6 +197,32 @@ createApp({
             },
 
             replyMessage() {
+
+                  this.newDate();
+
+                  setTimeout( () => {
+                        this.contacts[this.selectedContact].messages.push({
+                              date: newDate,
+                              message: 'Ok',
+                              status: 'received'
+                        });
+                  }, 1000);
+
+            },
+
+            newDate() {
+
+                  let fullYear = new Date().getFullYear();
+
+                  let month = new Date().getMonth() + 1;
+                  if (month < 10) {
+                        month = '0' + month;
+                  }
+
+                  let day = new Date().getDay();
+                  if (day < 10) {
+                        day = '0' + day;
+                  }
 
                   let hour = new Date().getHours();
                   if (hour < 10) {
@@ -215,13 +234,12 @@ createApp({
                         minutes = '0' + minutes;
                   }
 
-                  setTimeout( () => {
-                        this.contacts[this.selectedContact].messages.push({
-                              date: hour + ':' + minutes,
-                              message: 'ok',
-                              status: 'received'
-                        });
-                  }, 1000);
+                  let seconds = new Date().getSeconds();
+                  if (seconds < 10) {
+                        seconds = '0' + seconds;
+                  }
+
+                  return newDate = day + '/' + month + '/' + fullYear + ' ' + hour + ':' + minutes + ':' + seconds;
 
             },
             
@@ -247,28 +265,35 @@ createApp({
            
             },
 
-            messageTime() {
+            dropVisibility() {
 
-                  this.contacts.forEach((contact) => {
+                  this.dropdownVisibility = !this.dropdownVisibility;
+                  console.log(this.dropdownVisibility)
 
-                        contact.messages.forEach((message) => {
+            }
 
-                              const splittedDate = message.date.split(' ');
-                              const splittedTime = splittedDate[1].split(':');
+      //       messageTime() {
+
+      //             this.contacts.forEach((contact) => {
+
+      //                   contact.messages.forEach((message) => {
+
+      //                         const splittedDate = message.date.split(' ');
+      //                         const splittedTime = splittedDate[1].split(':');
       
-                              message.date = splittedTime[0] + ':' + splittedTime[1];
+      //                         message.date = splittedTime[0] + ':' + splittedTime[1];
 
-                        });
+      //                   });
                         
-                  });
+      //             });
 
-            },
+      //       },
 
       },
 
       mounted() {
 
-            this.messageTime();
+      //       this.messageTime();
 
       }
 

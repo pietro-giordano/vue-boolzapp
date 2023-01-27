@@ -213,6 +213,7 @@ input:focus {
 
 .right-side main ul li {
       display: flex;
+      margin-bottom: 10px;
 }
 
 .right-side main ul .right {
@@ -227,6 +228,7 @@ input:focus {
       margin-bottom: 0.3rem; 
       border-radius: 0.5rem;
       position: relative;
+      cursor: pointer;
 }
 
 .right-side main ul li .sent {
@@ -243,6 +245,18 @@ input:focus {
       position: absolute;
       bottom: 0.2rem;
       right: 0.2rem;
+}
+
+.right-side main ul li .dropdown {
+      border: 1px solid #f1f1f1;
+      background-color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      bottom: -30px;
+      z-index: 1;
 }
 
 .right-side footer {

@@ -59,7 +59,8 @@
                                                 </div>
       
                                                 <div class="last-message tiny-text">
-                                                      {{ contact.messages[contact.messages.length - 1].date }}
+                                                      <!-- {{ contact.messages[contact.messages.length - 1].date }} -->
+                                                      {{ contact.messages[contact.messages.length - 1].date.slice(11, 16) }}
                                                 </div>
                                           </li>
                                     </ul>
@@ -75,7 +76,8 @@
 
                                           <div class="contact-name">
                                                 <p>{{ contacts[selectedContact].name }}</p>
-                                                <p class="tiny-text">Ultimo accesso oggi alle {{ contacts[selectedContact].messages[contacts[selectedContact].messages.length - 1].date }}</p>
+                                                <!-- <p class="tiny-text">Ultimo accesso oggi alle {{ contacts[selectedContact].messages[contacts[selectedContact].messages.length - 1].date }}</p> -->
+                                                <p class="tiny-text">Ultimo accesso {{ contacts[selectedContact].messages[contacts[selectedContact].messages.length - 1].date.slice(0, 10) }} alle {{ contacts[selectedContact].messages[contacts[selectedContact].messages.length - 1].date.slice(11, 16) }}</p>
                                           </div>
                                     </div>
                                     
@@ -89,12 +91,17 @@
                               <main>
                                     <ul>
                                           <li v-for="(message, index) in contacts[selectedContact].messages" :class="message.status == 'sent' ? 'right' : '' ">
-                                                <div class="msg" :class="message.status == 'sent' ? 'sent' : 'received' ">
+                                                <div class="msg" :class="message.status == 'sent' ? 'sent' : 'received' " @click="dropVisibility()">
                                                       {{ message.message }}
 
                                                       <div class="msg-time">
-                                                            {{ message.date }}
+                                                            <!-- {{ message.date }} -->
+                                                            {{ message.date.slice(11, 16) }}
                                                       </div>
+
+                                                      <span v-show="dropdownVisibility" class="dropdown">
+                                                            Cancella messaggio
+                                                      </span>
                                                 </div>
                                           </li>
                                     </ul>
