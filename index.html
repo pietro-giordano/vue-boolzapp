@@ -91,7 +91,7 @@
                               <main>
                                     <ul>
                                           <li v-for="(message, index) in contacts[selectedContact].messages" :class="message.status == 'sent' ? 'right' : '' ">
-                                                <div class="msg" :class="message.status == 'sent' ? 'sent' : 'received' " @click="dropVisibility()">
+                                                <div class="msg" :class="message.status == 'sent' ? 'sent' : 'received' " @click="message.dropdownVisibility = !message.dropdownVisibility">
                                                       {{ message.message }}
 
                                                       <div class="msg-time">
@@ -99,7 +99,7 @@
                                                             {{ message.date.slice(11, 16) }}
                                                       </div>
 
-                                                      <span v-show="dropdownVisibility" @click="deleteMessage(selectedContact, index)" class="dropdown">
+                                                      <span v-if="message.dropdownVisibility" @click.stop="deleteMessage(selectedContact, index)" class="dropdown">
                                                             Cancella messaggio
                                                       </span>
                                                 </div>
