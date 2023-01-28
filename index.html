@@ -99,7 +99,9 @@
                                                             {{ message.date.slice(11, 16) }}
                                                       </div>
 
-                                                      <span v-if="message.dropdownVisibility" @click.stop="deleteMessage(selectedContact, index)" class="dropdown">
+                                                      <i class="fa-solid fa-chevron-down" v-show="message.dropdownVisibility"></i>
+
+                                                      <span v-show="message.dropdownVisibility" @click.stop="deleteMessage(selectedContact, index)" class="dropdown">
                                                             Cancella messaggio
                                                       </span>
                                                 </div>

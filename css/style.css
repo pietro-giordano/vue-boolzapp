@@ -23,11 +23,6 @@ button {
       background-color: #eaeaea;
 }
 
-::placeholder {
-      color: gray;
-      padding-left: 0.7rem;
-}
-
 input:focus {
       outline: none;
 }
@@ -247,15 +242,24 @@ input:focus {
       right: 0.2rem;
 }
 
+.right-side main ul li i {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #b1b1b1;
+      padding: 0.5rem;
+}
+
 .right-side main ul li .dropdown {
-      border: 1px solid #f1f1f1;
+      border: 1px solid #b1b1b1;
       background-color: white;
       padding: 10px;
       border-radius: 5px;
       cursor: pointer;
       position: absolute;
       right: 0;
-      bottom: -30px;
+      bottom: -25px;
       z-index: 1;
 }
 
@@ -271,6 +275,7 @@ input:focus {
       width: 85%;
       border: none;
       border-radius: 5px;
+      padding-left: 1rem;
 }
 
 .right-side footer input::placeholder {
