@@ -219,7 +219,7 @@ createApp({
                         month = '0' + month;
                   }
 
-                  let day = new Date().getDay();
+                  let day = new Date().getDate();
                   if (day < 10) {
                         day = '0' + day;
                   }
